@@ -8,12 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var isOn = false
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Image(systemName: "lightbulb")
+                .font(.largeTitle)
+                .symbolVariant(isOn ? .fill : .none)
+                .foregroundStyle(isOn ? .yellow : .black)
+            
+            Toggle(isOn: $isOn) {
+                Text("Toggle light switch")
+            }
+            .labelsHidden()
         }
         .padding()
     }
