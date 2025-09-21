@@ -9,9 +9,27 @@ import SwiftUI
 
 @main
 struct LearningSwiftUIApp: App {
+    
+    @StateObject var vm = PurchaseViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabView {
+                PurchaseView()
+                    .environmentObject(vm)
+                    .tabItem {
+                        Image(systemName: "creditcard")
+                        Text("Purchase")
+                    }
+                
+                PurchaseStateView()
+                    .environmentObject(vm)
+                    .tabItem {
+                        Image(systemName: "gear")
+                        Text("State")
+                    }
+                
+            }
         }
     }
 }
