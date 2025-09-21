@@ -12,7 +12,8 @@ struct LearningSwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
 //            ViewModifierBootcamp()
-            AnyTransitionBootcamp()
+//            AnyTransitionBootcamp()
+            MatchedGeometryEffectBootcamp2()
         }
     }
 }
