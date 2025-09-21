@@ -8,14 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var isLoading = false
+
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            CustomLoadingView(isLoading: $isLoading)
+
+            Button(action: {
+                isLoading.toggle()
+            }) {
+                Text("\(isLoading ? "Stop" : "Start") Loading")
+                    .padding()
+            }
         }
-        .padding()
     }
 }
 
