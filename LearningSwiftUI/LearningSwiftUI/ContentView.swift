@@ -8,15 +8,27 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @StateObject var vm = PeopleViewModel()
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            if vm.isLoading {
+                ProgressView()
+                Text("Loading...")
+                    .padding()
+            } else {
+                Text(vm.people.isEmpty ? "No User" : "Manager to get \(vm.people.count) users")
+            }
+            Button(action: {
+                vm.fetchUser()
+            }) {
+                Text("Fetch some people")
+            }
         }
-        .padding()
     }
+    
+   
 }
 
 #Preview {
