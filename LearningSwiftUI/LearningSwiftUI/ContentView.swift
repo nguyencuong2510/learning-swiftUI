@@ -8,14 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var vm = LoginViewModel()
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        switch vm.currentSate {
+        case .loading:
+            ProgressView()
+        case .notLoggedIn:
+            LoginView(user: $vm.user, didTap: {
+                self.vm.login()
+            })
+        case .loggedIn:
+            LoggedInView(didTap: {
+                self.vm.logout()
+            })
         }
-        .padding()
     }
 }
 
