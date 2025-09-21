@@ -8,14 +8,13 @@
 import SwiftUI
 
 struct LoggedInView: View {
-    
-    var didTap: () -> Void
-    
+    @ObservedObject var vm: LoginViewModel
+
     var body: some View {
         VStack {
             Text("Hello, World!")
             Button(action: {
-                self.didTap()
+                self.vm.logout()
             }) {
                 Text("Logout")
             }
@@ -24,5 +23,5 @@ struct LoggedInView: View {
 }
 
 #Preview {
-    LoggedInView(didTap: {})
+    LoggedInView(vm: .init())
 }

@@ -15,13 +15,9 @@ struct ContentView: View {
         case .loading:
             ProgressView()
         case .notLoggedIn:
-            LoginView(user: $vm.user, didTap: {
-                self.vm.login()
-            })
+            LoginView(vm: vm)
         case .loggedIn:
-            LoggedInView(didTap: {
-                self.vm.logout()
-            })
+            LoggedInView(vm: vm)
         }
     }
 }

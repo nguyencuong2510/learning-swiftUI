@@ -9,24 +9,23 @@ import SwiftUI
 
 struct LoginView: View {
     
-    @Binding var user: User
-    let didTap: () -> Void
+    @ObservedObject var vm: LoginViewModel
     
     var body: some View {
         VStack {
             
-            TextField("UserName", text: $user.userName, prompt: Text("UserName"))
-            SecureField("UserName", text: $user.password, prompt: Text("Password"))
+            TextField("UserName", text: $vm.user.userName, prompt: Text("UserName"))
+            SecureField("UserName", text: $vm.user.password, prompt: Text("Password"))
             
             Button(action: {
-                self.didTap()
+                self.vm.login()
             }, label: {
                 Text("Login")
             })
         }
         .padding(.horizontal)
         .textFieldStyle(.roundedBorder)
-        .onChange(of: user) { newValue in
+        .onChange(of: vm.user) { newValue in
             print("the user inputted: \(newValue)")
         }
         
@@ -34,5 +33,5 @@ struct LoginView: View {
 }
 
 #Preview {
-    LoginView(user: .constant(.init()), didTap: {})
+    LoginView(vm: .init())
 }
