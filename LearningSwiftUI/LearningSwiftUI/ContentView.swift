@@ -10,10 +10,34 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Link(destination: .init(string: "https://github.com")!) {
+                Label {
+                    Text("Hello Cuongnv")
+                        .bold()
+                        .foregroundStyle(.white)
+                        .padding()
+                        .background(.red)
+                        .clipShape(Capsule())
+                } icon: {
+                    Image(systemName: "paintpalette")
+                        .resizable()
+                        .font(.largeTitle)
+                        .frame(width: 70, height: 70)
+                }
+            }
+            
+            Label("Cuongnv thumbnail", systemImage: "paintpalette")
+                .labelStyle(CapsuleStyle())
+            
+            Label("Cuongnv thumbnail", systemImage: "paintpalette")
+                .labelStyle(StrongCapsuleStyle(color: .blue))
+            
+            Label("Cuongnv thumbnail", systemImage: "paintpalette")
+                .labelStyle(.capsule)
+            
+            Label("Cuongnv thumbnail", systemImage: "paintpalette")
+                .labelStyle(.strongCapsule(color: .pink))
+                .labelStyle(.iconOnly)
         }
         .padding()
     }
