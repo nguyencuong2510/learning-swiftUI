@@ -9,15 +9,58 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ScrollView {
+            VStack(spacing: 20) {
+                
+                VStack {
+                    Text("Quanlity")
+                    ControlGroup {
+                        increment
+                        decrement
+                    }
+                }
+                
+                ControlGroup {
+                    increment
+                    decrement
+                }
+                .controlGroupStyle(.quantity)
+                
+                VStack {
+                    Text("Quanlity")
+                    ControlGroup {
+                        increment
+                        decrement
+                    }
+                }
+                .controlGroupStyle(.navigation)
+                
+                    
+                
+            }
+            .padding()
         }
-        .padding()
     }
 }
+
+extension ContentView {
+    var increment: some View {
+        Button {
+            
+        } label: {
+            Label("Increment", systemImage: "plus")
+        }
+    }
+    
+    var decrement: some View {
+        Button {
+            
+        } label: {
+            Label("decrement", systemImage: "minus")
+        }
+    }
+}
+
 
 #Preview {
     ContentView()
