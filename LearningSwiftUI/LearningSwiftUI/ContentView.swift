@@ -7,6 +7,19 @@
 
 import SwiftUI
 
+// MARK: - Models
+
+/*
+ This is model in project
+ */
+struct PersionModel {
+    
+}
+
+// MARK: - Models Fake Data
+
+
+// MARK: - ContentView
 struct ContentView: View {
     var body: some View {
         VStack {
@@ -16,6 +29,21 @@ struct ContentView: View {
             Text("Hello, world!")
         }
         .padding()
+    }
+    
+    
+    /// set model data
+    /// - Parameter item: the persion info
+    func set(_ item: PersionModel) {
+        print("model persion")
+    }
+    
+    
+    /// The Val func get info
+    /// - Parameter item: value input
+    /// - Returns: valueoutput
+    func getVal(item: Int) -> Int {
+        return item
     }
 }
 
