@@ -6,8 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		C9CE828D2E90445D0000DDD4 /* LayoutUIExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE828C2E90445D0000DDD4 /* LayoutUIExample.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		5CBFF1A22E79A97D008CAFD9 /* LearningSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearningSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9CE828C2E90445D0000DDD4 /* LayoutUIExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutUIExample.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -32,6 +37,7 @@
 		5CBFF1992E79A97D008CAFD9 = {
 			isa = PBXGroup;
 			children = (
+				C9CE828C2E90445D0000DDD4 /* LayoutUIExample.swift */,
 				5CBFF1A42E79A97D008CAFD9 /* LearningSwiftUI */,
 				5CBFF1A32E79A97D008CAFD9 /* Products */,
 			);
@@ -119,6 +125,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9CE828D2E90445D0000DDD4 /* LayoutUIExample.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
