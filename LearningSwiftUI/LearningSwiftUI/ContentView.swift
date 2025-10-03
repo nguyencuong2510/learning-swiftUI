@@ -9,13 +9,57 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ScrollView(.horizontal) {
+//            LazyVStack(alignment: .leading, spacing: 32, pinnedViews: .sectionFooters) {
+//                Section {
+//                    ForEach(0...20, id: \.self) { item in
+//                        Text("item \(item)")
+//                    }
+//                } header: {
+//                    Text("first Section")
+//                        .padding()
+//                        .frame(maxWidth: .infinity)
+//                        .background(.mint)
+//                }
+//
+//                Section {
+//                    ForEach(21...50, id: \.self) { item in
+//                        Text("item \(item)")
+//                    }
+//                } header: {
+//                    Text("first Section")
+//                        .padding()
+//                        .frame(maxWidth: .infinity)
+//                        .background(.red)
+//                }
+//                
+//            }
+            
+            LazyHStack(alignment: .top, spacing: 32, pinnedViews: .sectionHeaders) {
+                Section {
+                    ForEach(0...20, id: \.self) { item in
+                        Text("item \(item)")
+                    }
+                } header: {
+                    Text("first Section")
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(.mint)
+                }
+
+                Section {
+                    ForEach(21...50, id: \.self) { item in
+                        Text("item \(item)")
+                    }
+                } header: {
+                    Text("first Section")
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(.red)
+                }
+                
+            }
         }
-        .padding()
     }
 }
 
