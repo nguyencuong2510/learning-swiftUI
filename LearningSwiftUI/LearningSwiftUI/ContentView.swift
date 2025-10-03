@@ -7,15 +7,34 @@
 
 import SwiftUI
 
+struct Person: Identifiable {
+    let id = UUID()
+    let firstName: String
+    let lastName: String
+}
+
+extension Person {
+    static var data: [Person] = [
+        .init(firstName: "Billy", lastName: "Bob"),
+        .init(firstName: "Billy", lastName: "May"),
+        .init(firstName: "Jill", lastName: "Jan"),
+        .init(firstName: "Alex", lastName: "Omn")
+    ]
+}
+
 struct ContentView: View {
+    
+    @State private var people: [Person] = []
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            ForEach(people) { item in
+                PersionView(item: item)
+            }
         }
-        .padding()
+        .onAppear {
+            self.people = Person.data
+        }
     }
 }
 
